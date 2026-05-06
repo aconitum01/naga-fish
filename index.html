@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Naga Fish Aquarium</title>
+  <style>
+    html, body { margin: 0; padding: 0; overflow: hidden; background: #02060c; }
+    canvas { display: block; }
+    #ui {
+      position: fixed; top: 12px; left: 12px;
+      color: #cfe7ff; font: 12px/1.4 system-ui, sans-serif;
+      background: rgba(0, 20, 40, 0.45); padding: 10px 14px;
+      border-radius: 8px; backdrop-filter: blur(6px);
+      user-select: none; pointer-events: none;
+    }
+    #ui b { color: #8ed4ff; }
+    #loading {
+      position: fixed; inset: 0; display: grid; place-items: center;
+      color: #8ed4ff; font: 14px system-ui, sans-serif;
+      background: #02060c;
+      transition: opacity 0.6s; pointer-events: none;
+    }
+    #loading.hidden { opacity: 0; }
+  </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="ui">
+    <b>Naga Fish Aquarium</b><br />
+    Drag: rotate &nbsp; Wheel: zoom &nbsp; Right-drag: pan
+  </div>
+  <div id="loading">Loading fish model...</div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
